@@ -1,0 +1,27 @@
+{
+  "name": "learning-algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --progress --colors --display-error-details --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangweiwei3x3/learning-algorithm.git"
+  },
+  "keywords": [
+    "learning-algorithm"
+  ],
+  "author": "zww",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "clean-webpack-plugin": "^0.1.15",
+    "eslint": "^3.17.1",
+    "eslint-loader": "^1.6.3",
+    "glob": "^7.1.1",
+    "path": "^0.12.7",
+    "webpack": "^1.13.1"
+  }
+}
