@@ -11,7 +11,7 @@ var webpackConfig = {
     entry: {},
     output: {
         path: packPath,
-        filename: '[name]/index.js',
+        filename: '[name]',
     },
     module: {
         loaders: [{
@@ -37,17 +37,21 @@ function getEntries(globPath) {
 
     files.forEach((filepath) => {
         var split = filepath.split('/'),
-            name = split[split.length - 2];
+            name = '';
 
-        entries[name] = [];
 
-        entries[name].push(path.resolve(__dirname, `./src/${name}/index.js`));
+        for (let i = 1; i < split.length; i++) {
+            name += split[i] + '/'
+        }
+        name = name.slice(0, -1);
+    
+        entries[name] = path.resolve(__dirname, `./src/${name}`);
     });
 
     return entries;
 }
         
-var entries = getEntries('src/**/index.js');
+var entries = getEntries('src/**/*.js');
 Object.keys(entries).forEach((name) => {
     webpackConfig.entry[name] = entries[name];
 })
