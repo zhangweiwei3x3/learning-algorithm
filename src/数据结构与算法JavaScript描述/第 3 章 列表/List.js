@@ -23,6 +23,11 @@ List.prototype.find = function (elem) {
     return -1;
 };
 
+// 列表中是否含有元素
+List.prototype.contains = function (elem) {
+    return this.find(elem) !== -1;
+};
+
 // 返回当前位置的元素
 List.prototype.getElement = function () {
     return this.dataStore[this.pos];
@@ -71,16 +76,12 @@ List.prototype.end = function () {
 
 // 将列表的当前位置向前移动一位
 List.prototype.prev = function () {
-    if (this.pos > 0) {
-        this.pos--;
-    } 
+    this.pos--;
 };
 
 // 将列表的当前位置向后移动一位
 List.prototype.next = function () {
-    if (this.pos < this.dataStore.length - 1) {
-        this.pos++;
-    } 
+    this.pos++;
 };
 
 // 将列表的当前位置移动到指定位置

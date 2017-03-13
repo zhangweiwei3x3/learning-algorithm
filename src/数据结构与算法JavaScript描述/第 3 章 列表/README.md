@@ -19,5 +19,38 @@ javascript 默认的比较 数字就是 比大小；字母就是比顺序。不�
 
 * **4、修改本章的影碟租赁程序，当一部影片检出后，将其加入一个已租影片列表。每当有客户检出一部影片，都显示该列表中的内容。**
 
+```js
+/**
+ * 原影碟租赁程序
+ */
+// 影片列表
+var movies = ['肖申克的救赎', '教父', '教父 2', '低俗小说', '黄金三镖客', '十二怒汉', '辛德勒名单', '黑暗骑士', '指环王:王者归来'];
+var movieList = new List();
+
+for (var i = 0; i < movies.length; ++i) {
+    movieList.append(movies[i]);
+}
+
+// 客户列表
+var customers = new List();
+
+// 客户对象
+function Customer(name, movie) {
+    this.name = name;
+    this.movie = movie;
+}
+
+// 检出
+function checkOut(name, movie, filmList, customerList) {
+    if (filmList.contains(movie)) {
+        var c = new Customer(name, movie);
+
+        customerList.append(c);
+        filmList.remove(movie);
+    } else {
+        console.log(movie + ' 不存在！');
+    }
+}
+```
 
 * **5、为影碟租赁程序创建一个 check-in() 函数，当客户归还一部影片时，将该影片从已租列表中删除，同时添加到现有影片列表中。**
