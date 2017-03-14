@@ -21,22 +21,22 @@ Stack.prototype.pop = function (elem) {
 };
 
 // 返回栈顶元素，不改变栈
-Stack.prototype.peek = function (elem) {
+Stack.prototype.peek = function () {
     return this.dataStore[this.top - 1];
 };
 
 // 栈大小
-Stack.prototype.size = function (elem) {
+Stack.prototype.size = function () {
     return this.top;
 };
 
 // 清空栈
-Stack.prototype.clear = function (elem) {
+Stack.prototype.clear = function () {
     this.dataStore = [];
     this.top = 0;
 };
 
 // 判断栈是否为空
-Stack.prototype.isEmpty = function (elem) {
+Stack.prototype.isEmpty = function () {
     return this.top === 0;
 };
