@@ -14,6 +14,28 @@
 
 * **3、修改例 5-5 中的优先队列，使得优先级高的元素优先码也大。写一段程序测试你的改动。**
 
-```js
+就是修改一个比较符号，< 改成 > 即可
+优先队列：
 
+```js
+function PriorityQueue() {
+    this.dataStore = [];
+}
+
+extend(PriorityQueue, Queue);
+
+// code 越小，优先级越高
+PriorityQueue.prototype.dequeue = function () {
+    var priority = this.dataStore[0].code,
+        index = 0;
+
+    for (var i = 1; i < this.dataStore.length; i++) {
+        if (this.dataStore[i].code < priority) {
+            index = i;
+            priority = this.dataStore[i].code;
+        }
+    }
+    
+    return this.dataStore.splice(index, 1);
+};
 ```
