@@ -30,7 +30,7 @@ HashTable.prototype.get = function (key) {
 
 // 显示散列数据
 // 开链法
-HashTable.prototype.show = function () {
+HashTable.prototype.display = function () {
     for (let i = 0; i < this.table.length; i++) {
         if (this.table[i] != null) {
             console.log(i + ': ' + this.table[i].toString());
@@ -67,7 +67,7 @@ HashTable.prototype.getLine = function (key) {
 
 // 显示散列数据
 // 线性探测法
-HashTable.prototype.showLine = function () {
+HashTable.prototype.displayLine = function () {
     for (let i = 0; i < this.table.length; i++) {
         if (this.table[i] != null) {
             console.log(this.table[i] + ': ' + this.values[i]);

@@ -14,6 +14,7 @@ function Node(elem) {
 function SLList() {
     this.__head__ = Math.random().toString(36);
     this.head = new Node(this.__head__);
+    this.__size__ = 0;
 }
 
 // 查找 elem 在链表中的节点
@@ -38,6 +39,11 @@ SLList.prototype.findPrev = function (elem) {
     return currNode;
 };
 
+// 链表的长度
+SLList.prototype.size = function () {
+    return this.__size__;
+};
+
 // 在 elem 节点后面插入新节点 newElem
 // elem 如果不存在就是在表头插入新节点
 SLList.prototype.insert = function (newElem, elem) {
@@ -50,6 +56,8 @@ SLList.prototype.insert = function (newElem, elem) {
         newNode.next = currNode.next;
         // 重置当前节点的 next 引用
         currNode.next = newNode;
+
+        this.__size__++;
     }
 
     // 返回是否插入成功
@@ -70,6 +78,8 @@ SLList.prototype.remove = function (elem) {
         currNode.elem = null;
         currNode.next = null;
         currNode = null;
+
+        this.__size__--;
     }
 
     // 返回是否移除成功
