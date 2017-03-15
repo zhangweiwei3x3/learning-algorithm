@@ -1,56 +1,4 @@
-import {extend} from '../../libs/Utils';
-
-/**
- * 队列
- *     队列是一种先进先出（FIFO：First-In-First-Out）的数据结构
- */
-function Queue() {
-    this.dataStore = [];
-}
-
-// 入队
-Queue.prototype.enqueue = function (elem) {
-    this.dataStore.push(elem);
-};
-
-// 出队
-Queue.prototype.dequeue = function () {
-    return this.dataStore.shift();
-};
-
-// 读取队首的元素
-Queue.prototype.front = function () {
-    return this.dataStore[0];
-};
-
-// 读取队尾的元素
-Queue.prototype.back = function () {
-    return this.dataStore[this.dataStore.length - 1];
-};
-
-// 判断队列是否为空
-Queue.prototype.isEmpty = function () {
-    return this.dataStore.length === 0;
-};
-
-// 清空队列
-Queue.prototype.clear = function () {
-    // 使用 this.dataStore = [] 是重新赋值，以前的引用还在例：
-    // var a = [1,2]; var b = a; a = []; 
-    // console.log(b) // [1,2]
-    this.dataStore.length = 0;
-};
-
-// 显示队列中的所有元素
-Queue.prototype.toString = function () {
-    let resStr = '';
-
-    for (let i = 0; i < this.dataStore.length; i++) {
-        resStr += this.dataStore[i] + '\r\n';
-    }
-
-    return resStr;
-};
+import {PriorityQueue} from './Queue';
 
 /**
  * 1、修改 Queue 类，形成一个 Deque 类。
@@ -156,16 +104,6 @@ check('abcba1'); // false
 /**
  * 3、修改例 5-5 中的优先队列，使得优先级高的元素优先码也大。写一段程序测试你的改动。
  */
- 
- /**
-  * 优先队列
-  */
-function PriorityQueue() {
-    this.dataStore = [];
-}
-
-extend(PriorityQueue, Queue);
-
 // code 越大，优先级越高
 PriorityQueue.prototype.dequeue = function () {
     var priority = this.dataStore[0].code,

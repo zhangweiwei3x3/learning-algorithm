@@ -76,3 +76,7 @@ PriorityQueue.prototype.dequeue = function () {
     
     return this.dataStore.splice(index, 1);
 };
+
+
+
+export default {Queue, PriorityQueue};

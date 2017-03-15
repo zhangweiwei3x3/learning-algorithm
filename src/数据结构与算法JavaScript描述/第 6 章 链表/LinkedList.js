@@ -281,3 +281,6 @@ SCLList.prototype.display = function () {
     }
     console.log('----------------');
 };
+
+
+export default {SLList, DLList, SCLList};

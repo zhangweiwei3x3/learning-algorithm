@@ -45,3 +45,5 @@ Dictionary.prototype.display = function () {
         console.log(key + ' -> ' + this.dataStore[key]);
     });
 };
+
+export default Dictionary;

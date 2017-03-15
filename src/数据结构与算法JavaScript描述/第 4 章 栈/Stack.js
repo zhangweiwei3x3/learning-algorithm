@@ -43,3 +43,6 @@ Stack.prototype.clear = function () {
 Stack.prototype.isEmpty = function () {
     return this.top === 0;
 };
+
+
+export default Stack;

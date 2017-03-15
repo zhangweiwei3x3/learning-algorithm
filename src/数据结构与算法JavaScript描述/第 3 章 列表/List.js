@@ -106,3 +106,6 @@ List.prototype.toString = function () {
 List.prototype.size = function () {
     return this.dataStore.length;
 };
+
+
+export default List;

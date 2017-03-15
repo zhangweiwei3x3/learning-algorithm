@@ -27,6 +27,7 @@ HashTable.prototype.get = function (key) {
     return this.table[this.hash(key)];
 };
 
+
 // 显示散列数据
 // 开链法
 HashTable.prototype.show = function () {
@@ -49,7 +50,6 @@ HashTable.prototype.setLine = function (key, data = key) {
     this.table[pos] = key;
     this.values[pos] = data;
 };
-
 
 // get 获取
 // 线性探测法
@@ -88,5 +88,6 @@ HashTable.prototype.hash = function (string) {
 
     return parseInt(total, 10);
 };
+
 
 export default HashTable;
