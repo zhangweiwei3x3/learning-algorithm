@@ -35,7 +35,10 @@ Queue.prototype.isEmpty = function () {
 
 // 清空队列
 Queue.prototype.clear = function () {
-    return this.dataStore = [];
+    // 使用 this.dataStore = [] 是重新赋值，以前的引用还在例：
+    // var a = [1,2]; var b = a; a = []; 
+    // console.log(b) // [1,2]
+    this.dataStore.length = 0;
 };
 
 // 显示队列中的所有元素

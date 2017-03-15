@@ -8,7 +8,10 @@ function List() {
 
 // 清空列表
 List.prototype.clear = function () {
-    this.dataStore = [];
+    // 使用 this.dataStore = [] 是重新赋值，以前的引用还在例：
+    // var a = [1,2]; var b = a; a = []; 
+    // console.log(b) // [1,2]
+    this.dataStore.length = 0;
     this.pos = 0;
 };
 
