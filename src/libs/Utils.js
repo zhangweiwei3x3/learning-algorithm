@@ -1,7 +1,9 @@
 // 简单模拟 Object.create
 if (!Object.create) {
     Object.create = function (o) {
-        var F = function () {};
+        var F = function () {
+            console.log('一个空函数');
+        };
 
         F.prototype = o;
 
