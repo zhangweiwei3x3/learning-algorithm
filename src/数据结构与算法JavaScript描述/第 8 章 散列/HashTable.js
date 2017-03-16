@@ -14,17 +14,30 @@ HashTable.prototype.set = function (key, data = key) {
 
     this.table[pos] = this.table[pos] || [];
 
-    while (this.table[pos][index] != null) {
-        index++;
+    while (this.table[pos][index] != null && this.table[pos][index] !== key) {
+        index += 2;
     }
 
-    this.table[pos][index] = data;
+    this.table[pos][index] = key;
+    this.table[pos][index + 1] = data;
 };
 
 // get 获取
 // 开链法
 HashTable.prototype.get = function (key) {
-    return this.table[this.hash(key)];
+    let keyValues = this.table[this.hash(key)];
+
+    if (!keyValues) {
+        return null;
+    }
+
+    for (let i = 0; i < keyValues.length; i += 2) {
+        if (keyValues[i] === key) {
+            return keyValues[i + 1];
+        }
+    }
+
+    return null;
 };
 
 
@@ -33,7 +46,9 @@ HashTable.prototype.get = function (key) {
 HashTable.prototype.display = function () {
     for (let i = 0; i < this.table.length; i++) {
         if (this.table[i] != null) {
-            console.log(i + ': ' + this.table[i].toString());
+            for (let j = 0; j < this.table[i].length; j += 2) {
+                console.log(this.table[i][j] + ': ' + this.table[i][j + 1]);
+            }
         }
     }
 };
@@ -43,7 +58,7 @@ HashTable.prototype.display = function () {
 HashTable.prototype.setLine = function (key, data = key) {
     let pos = this.hash(key);
 
-    while (this.table[pos] != null) {
+    while (this.table[pos] != null && this.table[pos] !== key) {
         pos++;
     }
 

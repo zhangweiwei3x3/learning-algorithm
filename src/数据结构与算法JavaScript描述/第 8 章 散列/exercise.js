@@ -38,7 +38,7 @@ d2.get('a');
 HashTable.prototype.displayD = function () {
     for (let i = 0; i < this.table.length; i++) {
         if (this.table[i] != null) {
-            console.log(this.table[i][0] + ': ' + this.table[i].length);
+            console.log(this.table[i][0] + ': ' + this.table[i][1]);
         }
     }
 };
@@ -46,7 +46,13 @@ var str = 'the brown fox jumped over the blue fox';
 var d3 = new HashTable();
 
 str.split(' ').forEach((item) => {
-    d3.set(item, item);
+    var v = d3.get(item);
+
+    if (v) {
+        d3.set(item, v + 1);
+    } else {
+        d3.set(item, 1);
+    }
 });
 
 d3.displayD();
