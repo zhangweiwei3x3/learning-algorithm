@@ -1,15 +1,10 @@
-import CreateArray from './CreateArray';
+import CreateArray from '../../libs/CreateArray';
 import {bubbleSort, selectSort, insertSort, shellSort, mergeSort, quickSort} from './Sort';
 
 /**
  * 1、使用本章讨论的所有算法对字符串数据而非数字数据进行排序，并比较不同算法的执行时间。
  *     这两者的结果是否一致呢？
  */
-CreateArray.prototype.setStr = function (n) {
-    for (let i = 0; i < n; i++) {
-        this.dataStore[i] = Math.random().toString(36).slice(2);
-    }
-};
 var arr1 = new CreateArray(),
     n1 = 10000;
 
