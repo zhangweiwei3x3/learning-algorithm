@@ -1,4 +1,4 @@
-import {Graph} from './Graph';
+import Graph from './Graph';
 
 /**
  * 1、编写一个程序，测试广度优先和深度优先这两种图搜索算法哪一种速度更快。请使用不同大小的图来测试你的程序。

@@ -6,7 +6,7 @@ import {seqSeach, binSearch} from './Search';
  * 1、顺序查找算法总是查找数据集中匹配到的第一个元素。
  *      请重写该算法使之返回匹配到的最后一个元素。
  */
- // 倒序搜索
+// 倒序搜索
 function seqSeachLast(arr, data) {
     for (let i = arr.length; i--;) {
         if (arr[i] === data) {

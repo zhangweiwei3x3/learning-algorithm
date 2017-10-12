@@ -182,4 +182,4 @@ function makeChange(amount, coins) {
 }
 
 
-export default {recurFib, dynFib, lcs, dynlcs, knapsack, dKnapsack, makeChange};
+export {recurFib, dynFib, lcs, dynlcs, knapsack, dKnapsack, makeChange};

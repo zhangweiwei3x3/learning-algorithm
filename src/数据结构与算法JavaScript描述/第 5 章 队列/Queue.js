@@ -79,4 +79,4 @@ PriorityQueue.prototype.dequeue = function () {
 
 
 
-export default {Queue, PriorityQueue};
+export {Queue, PriorityQueue};

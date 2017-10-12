@@ -293,4 +293,4 @@ SCLList.prototype.display = function () {
 };
 
 
-export default {SLList, DLList, SCLList};
+export {SLList, DLList, SCLList};

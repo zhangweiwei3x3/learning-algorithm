@@ -16,12 +16,12 @@
   "author": "zww",
   "license": "ISC",
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "clean-webpack-plugin": "^0.1.15",
-    "eslint": "^3.17.1",
-    "eslint-loader": "^1.6.3",
-    "glob": "^7.1.1",
+    "babel-eslint": "^8.0.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "eslint": "^4.8.0",
+    "eslint-loader": "^1.9.0",
+    "glob": "^7.1.2",
     "path": "^0.12.7",
-    "webpack": "^1.13.1"
+    "webpack": "^3.7.1"
   }
 }

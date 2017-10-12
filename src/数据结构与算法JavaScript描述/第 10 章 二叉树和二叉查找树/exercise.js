@@ -1,4 +1,4 @@
-import {Node, BST} from './BST';
+import {Node, BST} from './BST.js';
 
 /**
  * 1、为 BST 类增加一个新方法，该方法返回 BST 中节点的个数。

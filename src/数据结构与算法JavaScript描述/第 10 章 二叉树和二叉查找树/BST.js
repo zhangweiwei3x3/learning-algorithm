@@ -179,4 +179,4 @@ BST.prototype.max = function (node) {
 };
 
 
-export default {Node, BST};
+export {Node, BST};

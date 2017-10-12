@@ -14,10 +14,10 @@ var webpackConfig = {
         filename: '[name]',
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loaders: ['eslint-loader']
+            use: ['eslint-loader']
         }]
     },
     plugins: [

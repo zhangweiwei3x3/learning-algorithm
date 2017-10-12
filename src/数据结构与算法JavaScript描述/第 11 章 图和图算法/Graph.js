@@ -116,4 +116,4 @@ Graph.prototype.display = function () {
 };
 
 
-export default {Graph};
+export default Graph;
